@@ -5,10 +5,10 @@
 git commit . -m "Releasing changes"
 git push
 
-git checkout main -m "Releasing changes"
+git checkout -m "Releasing changes" main
 git merge dev
 
-git checkout release -m "Releasing changes"
+git checkout -m "Releasing changes" release
 git merge main
 
-git checkout dev -m "Releasing changes"
+git checkout -m "Releasing changes" dev
