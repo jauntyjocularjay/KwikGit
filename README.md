@@ -6,7 +6,7 @@ A few shell scripts to make updating single-developer projects easy. To add to y
 $ git submodule add https://github.com/GeorgeSchafer/KwikGit.git
 ```
 
-or
+or to put into a filed named "sh" for "shell":
 
 ```
 $ git submodule add https://github.com/GeorgeSchafer/KwikGit.git sh
