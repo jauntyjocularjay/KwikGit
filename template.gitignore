@@ -1,6 +1,8 @@
 /node_modules
 /.git
 
+template.sh
+template.gitignore
 
 .gitignore
 .replit
