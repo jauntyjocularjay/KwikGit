@@ -13,3 +13,5 @@ npm i mocha chai --save-dev
 cd test
 git submodule add https://github.com/GeorgeSchafer/ChaiFunctions.git
 cd ..
+
+mkdir libs
