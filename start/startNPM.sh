@@ -16,3 +16,5 @@ touch test.chai.mjs
 cd ..
 
 mkdir libs
+mkdir javascripts
+mkdir javascripts
