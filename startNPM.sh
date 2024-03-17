@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# git submodule add https://github.com/GeorgeSchafer/KwikGit.git sh
+touch .gitignore 
+echo "/node_modules/" >> .gitignore
+echo ''
+
 git submodule add https://github.com/GeorgeSchafer/EasyAccessor.git lib/ea
 git submodule init
 git submodule update
 echo ''
 
-bash sh/gitBranches.sh
-echo ''
+npm install
+echo 'npm dependencies installed'
 
-touch .gitignore 
-echo "/node_modules/" >> .gitignore
+bash sh/gitBranches.sh
 echo ''
 
 npm i mocha chai --save-dev
