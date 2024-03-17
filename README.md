@@ -11,3 +11,11 @@ or to put into a filed named "sh" for "shell":
 ```
 $ git submodule add https://github.com/GeorgeSchafer/KwikGit.git sh
 ```
+
+## NPM Projects
+
+Easily start NPM projects with this (assuming you put the module in ./sh):
+
+```
+bash sh/startNPM.sh
+```
