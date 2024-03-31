@@ -2,7 +2,7 @@
 
 git branch dev-jade
 git checkout dev-jade
-git push --set-upstream origin dev
+git push --set-upstream origin dev-jade
 
 git branch beta
 git checkout beta
@@ -17,7 +17,7 @@ git checkout dev-jade
 # Setting default branch on master, this does not work on Replit
 git config --system init.defaultbranch master
 
-# dev is assumed to be the default working branch. 
+# dev-jade is assumed to be the default working branch. 
 git checkout dev-jade
 
 echo 'Branches created. If a branch already exists, the other were created.'

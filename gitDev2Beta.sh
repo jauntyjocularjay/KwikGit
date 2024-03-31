@@ -9,7 +9,7 @@ git push
 
 git checkout beta
 git pull
-git merge dev -m "Releasing changes to beta"
+git merge dev-jade -m "Releasing changes to beta"
 git push
 
 git checkout dev-jade
