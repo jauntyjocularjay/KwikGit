@@ -5,14 +5,14 @@
 git commit . -m "Releasing changes"
 git push
 
-git checkout main
+git checkout beta
 git pull
-git merge dev -m "Releasing changes"
+git merge dev-jade -m "Releasing changes"
 git push
 
 git checkout release
 git pull
-git merge main -m "Releasing changes"
+git merge beta -m "Releasing changes"
 git push
 
-git checkout dev
+git checkout dev-jade
