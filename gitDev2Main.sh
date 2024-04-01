@@ -4,12 +4,12 @@
 git checkout dev
 git pull
 git add .
-git commit -a -m "Releasing changes to main"
+git commit -a -m "Releasing changes to beta"
 git push
 
-git checkout main
+git checkout beta
 git pull
-git merge dev -m "Releasing changes to main"
+git merge dev -m "Releasing changes to beta"
 git push
 
 git checkout dev
