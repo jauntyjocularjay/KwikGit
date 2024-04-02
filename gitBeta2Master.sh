@@ -2,12 +2,12 @@
 # This should be run only after verifying the branch passes its unit tests.
 
 
-git checkout main
+git checkout beta
 git pull
 
-git checkout release
+git checkout master
 git pull
-git merge main -m "Releasing changes"
+git merge beta -m "Releasing changes"
 git push
 
 git checkout dev

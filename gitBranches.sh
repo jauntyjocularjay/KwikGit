@@ -4,18 +4,18 @@ git branch dev
 git checkout dev
 git push --set-upstream origin dev
 
-git branch main
-git checkout main
-git push --set-upstream origin main
+git branch beta
+git checkout beta
+git push --set-upstream origin beta
 
-git branch release
-git checkout release
-git push --set-upstream origin release
+git branch master
+git checkout master
+git push --set-upstream origin master
 
 git checkout dev
 
-# Setting default branch on release, this does not work on Replit
-git config --system init.defaultbranch release
+# Setting default branch on master, this does not work on Replit
+git config --system init.defaultbranch master
 
 # dev is assumed to be the default working branch. 
 git checkout dev
