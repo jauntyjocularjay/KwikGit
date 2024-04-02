@@ -13,4 +13,4 @@ git pull
 git merge beta -m "Releasing changes"
 git push
 
-git checkout dev-jade
+git checkout dev
