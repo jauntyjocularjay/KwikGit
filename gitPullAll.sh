@@ -14,8 +14,6 @@ git pull
 git checkout dev
 git pull
 
-git merge dev beta
-
 read -r -p "Enter your dev branch to update or press ctrl+c to exit: " devBranch
 git merge $devBranch dev
 
