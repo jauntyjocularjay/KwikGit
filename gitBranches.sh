@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git branch dev-jade
-git checkout dev-jade
-git push --set-upstream origin dev-jade
+git branch dev
+git checkout dev
+git push --set-upstream origin dev
 
 git branch beta
 git checkout beta
@@ -12,17 +12,17 @@ git branch master
 git checkout master
 git push --set-upstream origin master
 
-git checkout dev-jade
+git checkout dev
 
 # Setting default branch on master, this does not work on Replit
 git config --system init.defaultbranch master
 
-# dev-jade is assumed to be the default working branch. 
-git checkout dev-jade
+# dev is assumed to be the default working branch. 
+git checkout dev
 
 echo 'Branches created. If a branch already exists, the other were created.'
 
-echo 'You are now on the dev-jade branch.'
+echo 'You are now on the dev branch.'
 
 echo 'What is your GitHub email address? '
 
