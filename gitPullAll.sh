@@ -1,9 +1,9 @@
 #!/bin/bash
 
-read -r -p  "Enter commit message: " message
-git add .
-git commit -m "$message"
-git push
+git stash
+
+git checkout dev
+git pull
 
 git checkout master
 git pull
@@ -18,6 +18,7 @@ read -r -p "Enter your dev branch to update or press ctrl+c to exit: " devBranch
 git merge $devBranch dev
 
 git checkout $devBranch
+git pull
 
 echo "Done, you are now on $devBranch."
 

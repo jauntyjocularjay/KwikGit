@@ -7,3 +7,5 @@ read -r -p  "Enter commit message: " branch
 git branch -d $branch
 
 git push origin -d $branch
+
+git fetch origin --prune
