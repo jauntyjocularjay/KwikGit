@@ -5,10 +5,10 @@ git stash
 git checkout dev
 git pull
 
-git checkout master
+git checkout beta
 git pull
 
-git checkout beta
+git checkout master
 git pull
 
 read -r -p "Enter your dev branch to update or press ctrl+c to exit: " devBranch
