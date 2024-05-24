@@ -11,6 +11,9 @@ git pull
 git checkout master
 git pull
 
+git checkout dev
+git pull
+
 read -r -p "Enter your dev branch to update or press ctrl+c to exit: " devBranch
 git merge $devBranch dev
 
