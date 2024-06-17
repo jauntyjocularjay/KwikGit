@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo "Which branch do you want to delete?"
-
-read -r -p  "Enter commit message: " branch
+read -r -p  "Which branch do you want to delete? " branch
 
 git branch -d $branch
 
