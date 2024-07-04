@@ -20,43 +20,43 @@ case $view in
         selected_view = "hbs"
         ;;
     "3")
-        selected_view = 'hjs'
+        selected_view = "hjs"
         ;;
     "4")
-        selected_view = 'jade'
+        selected_view = "jade"
         ;;
     "5")
-        selected_view = 'pug'
+        selected_view = "pug"
         ;;
     "6")
-        selected_view = 'twig'
+        selected_view = "twig"
         ;;
     "7")
-        selected_view = 'vash'
+        selected_view = "vash"
         ;;
     *)
-        echo 'invalid selection, start again'
+        echo "invalid selection, start again"
         ;;
 esac
 
 case $css in
     "1")
-        selected_css = "css"
+        selected_css = ""
         ;;
     "2")
         selected_css = "less"
         ;;
     "3")
-        selected_css = 'stylus'
+        selected_css = "stylus"
         ;;
     "4")
-        selected_css = 'compass'
+        selected_css = "compass"
         ;;
     "5")
-        selected_css = 'sass'
+        selected_css = "sass"
         ;;
     *)
-        echo 'invalid selection, start again'
+        echo "invalid selection, start again"
         ;;
 esac
 
