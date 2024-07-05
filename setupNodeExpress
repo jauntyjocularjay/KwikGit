@@ -1,79 +1,29 @@
 #!/bin/bash
 
-npx express-generator
+# echo "What is the name of the application?"
+# read name
 
-echo "What is the name of the application? \n"
-read name
+# echo "Setting up express with Pug and standard CSS"
 
-echo "select a view engine"
-echo "1) ejs, 2) hbs, 3) hjs, 4) jade (now pug), 5) pug, 6) twig, 7) vash \n"
-read view
+# npx express-generator --git --pug $name
 
-echo "select a css engine"
-echo "1) plain css, 2) less, 3) stylus, 4) compass, 5) sass"
-read css
+# cd $name
 
-case $view in
-    "1")
-        selected_view = "ejs"
-        ;;
-    "2") 
-        selected_view = "hbs"
-        ;;
-    "3")
-        selected_view = "hjs"
-        ;;
-    "4")
-        selected_view = "jade"
-        ;;
-    "5")
-        selected_view = "pug"
-        ;;
-    "6")
-        selected_view = "twig"
-        ;;
-    "7")
-        selected_view = "vash"
-        ;;
-    *)
-        echo "invalid selection, start again"
-        ;;
-esac
-
-case $css in
-    "1")
-        selected_css = ""
-        ;;
-    "2")
-        selected_css = "less"
-        ;;
-    "3")
-        selected_css = "stylus"
-        ;;
-    "4")
-        selected_css = "compass"
-        ;;
-    "5")
-        selected_css = "sass"
-        ;;
-    *)
-        echo "invalid selection, start again"
-        ;;
-esac
-
-express --git -v=$selected_view -c=$selected_css $name
+mv .gitignore temp.gitignore
 
 git submodule add https://github.com/jauntyjocularjay/kwikgit.git git
-git submodule add https://github.com/jauntyjocularjay/jsutil.git src/module/jsutil
-git submodule add https://github.com/jauntyjocularjay/chaitests.git src/module/chaitests
+git submodule add https://github.com/jauntyjocularjay/jsutils.git public/module/jsutils
+git submodule add https://github.com/jauntyjocularjay/chaitests.git public/module/chaitests
 
-echo "node_modules/ \n" >> .gitignore
-echo "git/ \n" >> .gitignore
-echo "jsutil/ \n" >> .gitignore
-echo "chaitests/ \n" >> .gitignore
+mv temp.gitignore .gitignore
 
-cd $name
+echo "node_modules/" >> .gitignore
+echo "git/" >> .gitignore
+echo "jsutil/" >> .gitignore
+echo "chaitests/" >> .gitignore
+
 npm install nodemon --save-dev
+npm install express --save-dev
 npm i
 
 DEBUG=myapp:* npm start
