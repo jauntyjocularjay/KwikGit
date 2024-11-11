@@ -4,6 +4,30 @@ A few shell scripts to make updating single-developer projects easy. Scripts whi
 
 ## Adding the submodule
 
+### Ensure you are using a compatible shell
+
+#### Windows
+
+Use Git-Bash from GitHub. This allows you to use `bash` commands in Windows. I use this personally.
+
+#### Mac
+
+By default, MacOS uses `zsh`, which is broadly compatible with `bash` scripts, in the terminal. I have not had issues with this, but if you run into problems you can change your default shell in the terminal with:
+
+```zsh
+chsh -s /bin/bash
+```
+
+If you need to change it back, use:
+
+```bash
+chsh -s /bin/zsh
+```
+
+### Linux
+
+You should be able to use this by default as it seems `bash` is everywhere in the Linux world.
+
 ### Without adding to your project repo
 
 *optional*:Create your `.gitignore` if you have not already.
