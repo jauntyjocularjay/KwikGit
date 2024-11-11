@@ -1,18 +1,19 @@
 # KwikGit
 
-A few shell scripts to make updating single-developer projects easy. To add to your project, copy and past this into the terminal in your project folder into a folder named `git` in your project root:
+A few shell scripts to make updating single-developer projects easy. Scripts which are destructive are in `CamelCase` to ensure you have to *think* before you enter the command. Don't make my mistakes. To add to your project, copy and past this into the terminal in your project folder into a folder named `git` in your project root:
 
 ## Adding the submodule
 
 ### Without adding to your project repo
-*optional*:
 
-Create your `.gitignore` if you have not already.
+*optional*:Create your `.gitignore` if you have not already.
+
 ```bash
 touch .gitignore
 ```
 
 Add the `git/` folder to your .gitignore.
+
 ```bash
 echo 'git/' >> .gitignore
 ```
@@ -40,7 +41,7 @@ bash git/branches
 ### Add All, Commit, Push
 
 ```bash
-bash git/Commit
+bash git/commit
 ```
 
 Add all new files in the tree, commit changes, add messages, and push changes to the current branch.
@@ -48,16 +49,15 @@ Add all new files in the tree, commit changes, add messages, and push changes to
 ### Merge to Dev branch
 
 ```bash
-bash git/2Dev
+bash git/2dev
 ```
 
 Assuming you are working outside of your `dev` branch, this script adds all new files in the tree, pull changes from origin, commit changes, push changes, then merge with the current branch onto the `dev` branch.
 
-
 ### Merge Dev to Beta branch
 
 ```bash
-bash git/Dev2Beta
+bash git/dev2beta
 ```
 
 When you are ready to beta-test your changes, merge them into the `beta` branch.
@@ -65,17 +65,17 @@ When you are ready to beta-test your changes, merge them into the `beta` branch.
 ### Merge Beta to Master branch
 
 ```bash
-bash git/Dev2Beta
+bash git/beta2master
 ```
 
 When your changes in beta are ready for release, merge them to the `master` branch.
 
 ### Merge Dev to Master branch
 
-*Warning*: this is dangerous, it will permeate changes to all branches. Only use this for solo projects.
+*Warning*: This is dangerous, it will permeate changes to all branches. I *highly* recommond only using this for solo projects.
 
 ```bash
-bash git/Beta2Master
+bash git/dev2master
 ```
 
 ## Housekeeping
