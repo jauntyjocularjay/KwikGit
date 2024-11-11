@@ -83,10 +83,10 @@ bash git/dev2master
 ### Pull on all branches
 
 ```bash
-bash git/pullall
+bash git/fetchall
 ```
 
-This will pull changes to your `master`, `beta`, and `dev` branches from Github.
+This will stash your changes, fetch updates from your remote `master`, `beta`, and `dev` branches from Github, then re-apply your changes to dev.
 
 ### Delete a branch from local and remote
 

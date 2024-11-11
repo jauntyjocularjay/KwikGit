@@ -4,11 +4,13 @@ git stash
 
 git fetch --all 
 
-read -r -p "Enter your dev branch name to update or press ctrl+c to exit: " devBranch
+read -r -p "Enter your dev branch name to update: " devBranch
 git merge $devBranch dev
 
 git checkout $devBranch
 git pull
+
+git stash apply
 
 echo "Done, you are now on $devBranch."
 
