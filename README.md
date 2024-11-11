@@ -119,3 +119,4 @@ Removes a submodule for your project. Provide the path from your root to the sub
 bash git/readdkg
 ```
 
+Sometimes you decide you don't like how you set up KwikGit. This will prompt your for your existing KwikGit folder
