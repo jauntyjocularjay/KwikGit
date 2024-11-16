@@ -135,7 +135,7 @@ This will delete a branch and remove it from your remote. This way you don't hav
 ```bash
 bash git/submodules
 ```
-Initializes downloads or updates existing submodules in your project. Very handy when copying repo to a new machine.
+Initializes, downloads, and/or updates *all* existing submodules in your project. Very handy when copying repo to a new machine.
 
 #### Remove submodule from your project
 
