@@ -110,6 +110,14 @@ bash git/dev2master
 bash git/fetchall
 ```
 
+This will stash your changes from your current branch, run pull from your remote `master`, `beta`, `dev`, and your personal branches from Github, then re-apply your changes to your branch.
+
+### Fetch All
+
+```bash
+bash git/fetchall
+```
+
 This will stash your changes, fetch updates from your remote `master`, `beta`, and `dev` branches from Github, then re-apply your changes to dev.
 
 ### Delete a branch from local and remote
