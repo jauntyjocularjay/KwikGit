@@ -11,6 +11,17 @@ git push
 
 git checkout dev
 git pull
+git add .
+git commit -a -m "preparing to release changes to dev"
+git push
+
+git checkout $devBranch
+git merge dev
+git add .
+git commit -a -m "merging updates from dev"
+git push
+
+git checkout dev
 git merge $devBranch -m "Releasing changes from $devBranch to dev"
 git push
 
