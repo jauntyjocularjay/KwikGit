@@ -1,0 +1,24 @@
+#!/bin/bash
+
+git stash
+
+git fetch --all 
+
+git checkout master
+git pull
+
+git checkout beta
+git pull
+
+git checkout dev
+git pull
+
+read -r -p "Enter your dev branch name to update: " devBranch
+git checkout $devBranch
+git pull
+git merge dev
+
+git stash apply
+
+echo "Done, you are now on $devBranch."
+
