@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git rm -r --cached .
+git add .
+git commit -a -m "Updated gitignore"
+git push
