@@ -2,10 +2,8 @@
 # @TODO: DOCUMENT THIS CHANGE
 # Merge the dev branch to your working branch
 
-read -r -p "Enter the name of your working branch: " devBranch 
-
 # in the working branch
-git checkout $devBranch
+git checkout dev-jade
 git pull
 git add .
 git commit -a -m "preparing to merge from dev"
@@ -16,7 +14,7 @@ git checkout dev
 git pull
 
 # in the working branch
-git checkout $devBranch
+git checkout dev-jade
 git merge dev
 git add .
 git commit -a -m "merging updates from dev"
