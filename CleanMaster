@@ -1,0 +1,13 @@
+#!/bin/bash
+# This should be run only after verifying the branch passes its unit tests.
+
+git add . && git commit -a -m "Preparing to clean master via script" && git push
+git checkout master
+
+rm -r git/
+rm -r .vscode
+
+git add . && git commit -a -m "Cleanup via script" && git push
+
+git checkout dev
+git submodule update --init --recursive
