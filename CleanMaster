@@ -3,9 +3,11 @@
 
 git add . && git commit -a -m "Preparing to clean master via script" && git push
 git checkout master
+git pull
 
 rm -r git/
 rm -r .vscode
+rm -r *.meta
 
 git add . && git commit -a -m "Cleanup via script" && git push
 
