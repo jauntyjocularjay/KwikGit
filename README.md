@@ -152,3 +152,18 @@ bash git/readdkg
 ```
 
 Sometimes you decide you don't like how you set up KwikGit. This will prompt your for your existing KwikGit folder
+
+
+
+
+## New scripts
+
+### dev2work
+```bash
+bash git/dev2work
+```
+
+### commitlocal
+```bash
+bash git/commitlocal
+```
