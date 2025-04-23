@@ -4,7 +4,7 @@ A few shell scripts to make updating single-developer projects easy. Scripts whi
 
 ## Installation
 
-### option 1: The easy way: Add as a submodule
+### Option 1: The easy way: Add as a submodule
 
 #### Ensure you are using a compatible shell
 
@@ -64,12 +64,10 @@ export PATH=$KwikGit:$PATH
 
 ```
 
-3. Open your terminal at `/path/to/KwikGit`
-
-4. Assign yourself execution privileges for each file you wish to use
+3. Give yourself full privileges to the folder
 
 ```bash
-chmod u+x FILENAME
+chmod -R 755 /path/to/KwikGit
 ```
 
 ## Essentials
