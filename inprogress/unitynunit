@@ -1,0 +1,16 @@
+#!/bin/bash
+
+dotnet new sln
+cd Scripts
+dotnet new classlib
+
+cd ..
+dotnet sln add Scripts/Scripts.csproj
+mkdir Scripts.Tests
+cd Scripts.Tests
+dotnet new nunit
+dotnet add reference ../Scripts/Scripts.csproj
+cd ..
+dotnet sln add ./Scripts.Tests/Scripts.Tests.csproj
+
+
