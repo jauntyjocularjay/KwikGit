@@ -1,16 +1,18 @@
 # KwikGit
 
-A few shell scripts to make updating single-developer projects easy. Scripts which are destructive are in `CamelCase` to ensure you have to *think* before you enter the command. Don't make my mistakes. To add to your project, copy and past this into the terminal in your project folder into a folder named `git` in your project root:
+A few shell scripts to make updating single-developer projects easy. Scripts which are destructive are in `CamelCase` to ensure you have to _think_ before you enter the command. Don't make my mistakes. To add to your project, copy and past this into the terminal in your project folder into a folder named `git` in your project root:
 
-## Adding the submodule
+## Installation
 
-### Ensure you are using a compatible shell
+### option 1: The easy way: Add as a submodule
 
-#### Windows
+#### Ensure you are using a compatible shell
+
+##### Windows
 
 Use Git-Bash from GitHub. This allows you to use `bash` commands in Windows. I use this personally.
 
-#### Mac
+##### Mac
 
 By default, MacOS uses `zsh`, which is broadly compatible with `bash` scripts, in the terminal. I have not had issues with this, but if you run into problems you can change your default shell in the terminal with:
 
@@ -24,13 +26,13 @@ If you need to change it back, use:
 chsh -s /bin/zsh
 ```
 
-### Linux
+#### Linux
 
 You should be able to use this by default as it seems `bash` is everywhere in the Linux world.
 
-### Without adding to your project repo
+#### Without adding to your project repo
 
-*optional*:Create your `.gitignore` if you have not already.
+_optional_:Create your `.gitignore` if you have not already.
 
 ```bash
 touch .gitignore
@@ -44,10 +46,30 @@ echo 'git/' >> .gitignore
 
 This way you can still use these scripts without uploading them with the rest of your repo files. You will see a warning letting you know that you have added a folder included in your `.gitignore`. Disregard this message.
 
-### Add the submodule to your project
+#### Add the submodule to your project
 
 ```bash
 git submodule add https://github.com/jauntyjocularjay/KwikGit.git git
+```
+
+### Option 2 Add to your environment $PATH
+
+1. Open your RC file (`zsh` = `.zshrc`, `bash` = `.bash-rc`)
+    - normally this is found in your `home` or `~/` folder
+2. Add these lines to the file
+
+```bash
+PATH=/path/to/KwikGit:$PATH
+export PATH=$KwikGit:$PATH
+
+```
+
+3. Open your terminal at `/path/to/KwikGit`
+
+4. Assign yourself execution privileges for each file you wish to use
+
+```bash
+chmod u+x FILENAME
 ```
 
 ## Essentials
@@ -96,7 +118,7 @@ When your changes in beta are ready for release, merge them to the `master` bran
 
 ### Merge Dev to Master branch
 
-*Warning*: This is dangerous, it will permeate changes to all branches. I *highly* recommond only using this for solo projects.
+_Warning_: This is dangerous, it will permeate changes to all branches. I _highly_ recommond only using this for solo projects.
 
 ```bash
 bash git/dev2master
@@ -135,7 +157,8 @@ This will delete a branch and remove it from your remote. This way you don't hav
 ```bash
 bash git/submodules
 ```
-Initializes, downloads, and/or updates *all* existing submodules in your project. Very handy when copying repo to a new machine.
+
+Initializes, downloads, and/or updates _all_ existing submodules in your project. Very handy when copying repo to a new machine.
 
 #### Remove submodule from your project
 
@@ -153,17 +176,16 @@ bash git/readdkg
 
 Sometimes you decide you don't like how you set up KwikGit. This will prompt your for your existing KwikGit folder
 
-
-
-
 ## New scripts
 
 ### dev2work
+
 ```bash
 bash git/dev2work
 ```
 
 ### commitlocal
+
 ```bash
 bash git/commitlocal
 ```
