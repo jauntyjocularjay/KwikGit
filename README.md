@@ -52,6 +52,17 @@ This way you can still use these scripts without uploading them with the rest of
 git submodule add https://github.com/jauntyjocularjay/KwikGit.git git
 ```
 
+#### Using the script
+
+You will have to include the path to the script relative to your current working directly to the script. Assuming you have added the repo to `/path/to/project/git`
+
+```bash
+$ pwd
+/path/to/project/and/current/directory
+
+$ bash ../../git/commit
+```
+
 ### Option 2 Add to your environment $PATH
 
 1. Open your RC file (`zsh` = `.zshrc`, `bash` = `.bash-rc`)
@@ -79,21 +90,36 @@ These are the most important commands in the library.
 Create Workflow branches, set email, and username
 
 ```bash
-bash git/branches
+branches
 ```
+
+This creates three branches: `master`, `beta`, and `dev`.
+
+-   `master` is for your stable code
+-   `beta` is for code you are actively testing before merging it into master
+-   `dev` is for your latest code changes before they are merged into beta
+
+You will be prompted for:
+
+1. your GitHub email
+1. your Github user name
+
+_Note: if you have already set this on other projects, you can press `ctrl + c` to close the script early._
 
 ### Add All, Commit, Push
 
 ```bash
-bash git/commit
+commit
 ```
 
-Add all new files in the tree, commit changes, add messages, and push changes to the current branch.
+Add all new files in the tree, commit changes, prompt you for a commit message, and push changes to the current branch.
+
+_note: If you make a typo, press ctrl + c and run commit again. _
 
 ### Merge to Dev branch
 
 ```bash
-bash git/2dev
+2dev
 ```
 
 Assuming you are working outside of your `dev` branch, this script adds all new files in the tree, pull changes from origin, commit changes, push changes, then merge with the current branch onto the `dev` branch.
@@ -101,7 +127,7 @@ Assuming you are working outside of your `dev` branch, this script adds all new 
 ### Merge Dev to Beta branch
 
 ```bash
-bash git/dev2beta
+dev2beta
 ```
 
 When you are ready to beta-test your changes, merge them into the `beta` branch.
@@ -109,7 +135,7 @@ When you are ready to beta-test your changes, merge them into the `beta` branch.
 ### Merge Beta to Master branch
 
 ```bash
-bash git/beta2master
+beta2master
 ```
 
 When your changes in beta are ready for release, merge them to the `master` branch.
@@ -119,7 +145,7 @@ When your changes in beta are ready for release, merge them to the `master` bran
 _Warning_: This is dangerous, it will permeate changes to all branches. I _highly_ recommond only using this for solo projects.
 
 ```bash
-bash git/dev2master
+dev2master
 ```
 
 ## Housekeeping
@@ -127,7 +153,7 @@ bash git/dev2master
 ### Pull on all branches
 
 ```bash
-bash git/fetchall
+fetchall
 ```
 
 This will stash your changes from your current branch, run pull from your remote `master`, `beta`, `dev`, and your personal branches from Github, then re-apply your changes to your branch.
@@ -135,7 +161,7 @@ This will stash your changes from your current branch, run pull from your remote
 ### Fetch All
 
 ```bash
-bash git/fetchall
+fetchall
 ```
 
 This will stash your changes, fetch updates from your remote `master`, `beta`, and `dev` branches from Github, then re-apply your changes to dev.
@@ -143,7 +169,7 @@ This will stash your changes, fetch updates from your remote `master`, `beta`, a
 ### Delete a branch from local and remote
 
 ```bash
-bash git/DeleteBranch
+DeleteBranch
 ```
 
 This will delete a branch and remove it from your remote. This way you don't have to worry about stale branches clogging up your remotes.
@@ -153,7 +179,7 @@ This will delete a branch and remove it from your remote. This way you don't hav
 #### Initialize and update submodules
 
 ```bash
-bash git/submodules
+submodules
 ```
 
 Initializes, downloads, and/or updates _all_ existing submodules in your project. Very handy when copying repo to a new machine.
@@ -161,7 +187,7 @@ Initializes, downloads, and/or updates _all_ existing submodules in your project
 #### Remove submodule from your project
 
 ```bash
-bash git/DeleteSubmodule
+DeleteSubmodule
 ```
 
 Removes a submodule for your project. Provide the path from your root to the submodule.
@@ -169,7 +195,7 @@ Removes a submodule for your project. Provide the path from your root to the sub
 ### Remove and re-add Kwik Git
 
 ```bash
-bash git/readdkg
+readdkg
 ```
 
 Sometimes you decide you don't like how you set up KwikGit. This will prompt your for your existing KwikGit folder
@@ -179,11 +205,11 @@ Sometimes you decide you don't like how you set up KwikGit. This will prompt you
 ### dev2work
 
 ```bash
-bash git/dev2work
+dev2work
 ```
 
 ### commitlocal
 
 ```bash
-bash git/commitlocal
+commitlocal
 ```
