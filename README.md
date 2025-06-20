@@ -1,10 +1,16 @@
 # KwikGit
 
-A few shell scripts to make updating single-developer projects easy. Scripts which are destructive are in `CamelCase` to ensure you have to _think_ before you enter the command. Don't make my mistakes. To add to your project, copy and past this into the terminal in your project folder into a folder named `git` in your project root:
+A few shell scripts to make updating single-developer projects easy. Scripts which are destructive are in `CamelCase` to ensure you have to _think_ before you enter the command. Don't make my mistakes. To add to your project, copy and paste this into the terminal in your project folder into a folder named `git` in your project root:
+
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [License](#license)
 
 ## Installation
 
-### Option 1: The easy way: Add as a submodule
+### Option 1: Add as a submodule
 
 #### Ensure you are using a compatible shell
 
@@ -52,7 +58,18 @@ This way you can still use these scripts without uploading them with the rest of
 git submodule add https://github.com/jauntyjocularjay/KwikGit.git git
 ```
 
-### Option 2 Add to your environment $PATH
+#### Using the script
+
+You will have to include the path to the script relative to your current working directly to the script. Assuming you have added the repo to `/path/to/project/git`
+
+```bash
+$ pwd
+/path/to/project/and/current/directory
+
+$ bash ../../git/commit
+```
+
+### Option 2 add $PATH as an env variable
 
 1. Open your RC file (`zsh` = `.zshrc`, `bash` = `.bash-rc`)
     - normally this is found in your `home` or `~/` folder
@@ -74,116 +91,137 @@ chmod -R 755 /path/to/KwikGit
 
 These are the most important commands in the library.
 
-### New Project Setup
+### Usage
+
+#### New Project Setup
 
 Create Workflow branches, set email, and username
 
 ```bash
-bash git/branches
+branches
 ```
 
-### Add All, Commit, Push
+This creates three branches: `master`, `beta`, and `dev`.
+
+-   `master` is for your stable code
+-   `beta` is for code you are actively testing before merging it into master
+-   `dev` is for your latest code changes before they are merged into beta
+
+You will be prompted for:
+
+1. your GitHub email
+1. your Github user name
+
+_Note: if you have already set this on other projects, you can press `ctrl + c` to close the script early._
+
+#### Add All, Commit, Push
 
 ```bash
-bash git/commit
+commit
 ```
 
-Add all new files in the tree, commit changes, add messages, and push changes to the current branch.
+Add all new files in the tree, commit changes, prompt you for a commit message, and push changes to the current branch.
 
-### Merge to Dev branch
+_note: If you make a typo, press ctrl + c and run commit again. _
+
+#### Merge to Dev branch
 
 ```bash
-bash git/2dev
+2dev
 ```
 
 Assuming you are working outside of your `dev` branch, this script adds all new files in the tree, pull changes from origin, commit changes, push changes, then merge with the current branch onto the `dev` branch.
 
-### Merge Dev to Beta branch
+#### Merge Dev to Beta branch
 
 ```bash
-bash git/dev2beta
+dev2beta
 ```
 
 When you are ready to beta-test your changes, merge them into the `beta` branch.
 
-### Merge Beta to Master branch
+#### Merge Beta to Master branch
 
 ```bash
-bash git/beta2master
+beta2master
 ```
 
 When your changes in beta are ready for release, merge them to the `master` branch.
 
-### Merge Dev to Master branch
+#### Merge Dev to Master branch
 
-_Warning_: This is dangerous, it will permeate changes to all branches. I _highly_ recommond only using this for solo projects.
+_Warning_: This is dangerous, it will permeate changes to all branches. I _highly_ recommend only using this for solo projects.
 
 ```bash
-bash git/dev2master
+dev2master
 ```
 
 ## Housekeeping
 
-### Pull on all branches
+#### Pull on all branches
 
 ```bash
-bash git/fetchall
+fetchall
 ```
 
 This will stash your changes from your current branch, run pull from your remote `master`, `beta`, `dev`, and your personal branches from Github, then re-apply your changes to your branch.
 
-### Fetch All
+#### Fetch All
 
 ```bash
-bash git/fetchall
+fetchall
 ```
 
 This will stash your changes, fetch updates from your remote `master`, `beta`, and `dev` branches from Github, then re-apply your changes to dev.
 
-### Delete a branch from local and remote
+#### Delete a branch from local and remote
 
 ```bash
-bash git/DeleteBranch
+DeleteBranch
 ```
 
 This will delete a branch and remove it from your remote. This way you don't have to worry about stale branches clogging up your remotes.
 
-### Submodules
+#### Submodules
 
-#### Initialize and update submodules
+##### Initialize and update submodules
 
 ```bash
-bash git/submodules
+submodules
 ```
 
 Initializes, downloads, and/or updates _all_ existing submodules in your project. Very handy when copying repo to a new machine.
 
-#### Remove submodule from your project
+##### Remove submodule from your project
 
 ```bash
-bash git/DeleteSubmodule
+DeleteSubmodule
 ```
 
 Removes a submodule for your project. Provide the path from your root to the submodule.
 
-### Remove and re-add Kwik Git
+#### Remove and re-add Kwik Git
 
 ```bash
-bash git/readdkg
+readdkg
 ```
 
-Sometimes you decide you don't like how you set up KwikGit. This will prompt your for your existing KwikGit folder
+Sometimes you decide you don't like how you set up KwikGit. This will prompt you for your existing KwikGit folder
 
 ## New scripts
 
 ### dev2work
 
 ```bash
-bash git/dev2work
+dev2work
 ```
 
 ### commitlocal
 
 ```bash
-bash git/commitlocal
+commitlocal
 ```
+
+# License
+
+[GPL v3](./LICENSE)
