@@ -1,0 +1,4 @@
+#!/bin/bash
+# Removes package-lock.json and node_modules to reset npm
+
+rm -rf package-lock.json node_modules && npm i

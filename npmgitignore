@@ -1,0 +1,4 @@
+#!/bin/bash
+# Create .gitignore and add node modules
+
+touch .gitignore && echo 'node_modules/' >> .gitignore
